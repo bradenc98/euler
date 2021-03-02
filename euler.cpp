@@ -24,8 +24,8 @@ dt=.1;
 n=t_end/dt + 1;
 
 
-int x [n];
-int t [n];
+double x [n];
+double t [n];
 
 int x_0=1;
 x[0]=x_0;
@@ -38,7 +38,7 @@ for (int i=0;i<=n;++i) {
 
 
 for (int i=0;i<n;i++) {
-    cout<<i<<'\t'<<x[i]<<endl;
+    cout<<i*dt<<'\t'<<x[i]<<endl;
 }
 return 0;
 }
