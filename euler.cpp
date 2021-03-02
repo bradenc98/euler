@@ -2,27 +2,48 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
 int main ()
 
 {
 
+string line;
+double timestep;
+int steps;
 
-//string line;
-//ifstream myfile  ("params.dat");
- 
-// while  
+ifstream myfile ("params.dat");
+if(myfile.is_open())
 
+
+{
+	while(getline(myfile,line))
+	{
+			
+	istringstream ss(line);
+	ss >> timestep >> steps;
+
+        
+
+        
+	}
+	myfile.close();
+	
+}
+else
+	cout<<"error";   
+
+//cout<< timestep <<" "<< steps << endl ;
 double dt;
 int t_beg,t_end,n;
 
 t_beg=0;
-t_end=15;
-dt=.1;
+t_end=10;
+dt=timestep;
 
-n=t_end/dt + 1;
-
+//n=t_end/dt + 1;
+n=steps;
 
 double x [n];
 double t [n];
@@ -37,8 +58,12 @@ for (int i=0;i<=n;++i) {
 }
 
 
-for (int i=0;i<n;i++) {
-    cout<<i*dt<<'\t'<<x[i]<<endl;
+//for (int i=0;i<n;i++) {
+  //  cout<<i*dt<<'\t'<<x[i]<<endl;
+
+for (double i=1;i<10;i++) {
+	int m=(int)( i/dt);
+	cout<<i<<'\t'<<x[m]<<endl;
 }
 return 0;
 }
