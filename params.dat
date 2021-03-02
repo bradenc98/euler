@@ -1,2 +1,2 @@
-#parameters of the time integration (time step, number of steps)
-.1 0 5
+//parameters of the time integration (time step, number of steps)
+.0001 100001
